@@ -227,7 +227,7 @@ n1x commands: Gnome partition editor for manipulating disk partitions.`gparted
 n1x commands: GNU Bourne-Again SHell`bash
 n1x commands: GNU project C++ compiler`g++
 n1x commands: GNU project C compiler`gcc
-n1x commands: GNU project Emacs`emac
+n1x commands: GNU project Emacs`emacs
 #n1x commands: GNU Project parser generator`yacc
 #n1x commands: GNU Project parser generator (yacc replacement)`bison
 n1x commands: GSettings configuration tool`gsettings
