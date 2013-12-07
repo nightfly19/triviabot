@@ -4,11 +4,35 @@ import re
 
 class Question():
     def __init__(self, category, question, answer, db):
-        self.category = category
-        self.question = question
-        self.answer = answer
+        self.category = category.encode('ascii')
+        self.question = question.encode('ascii')
+        self.answer = answer.encode('ascii')
         self.db = db
-        pass
+        self.clue = str()
+        #Generate initial hint
+        for i in self.answer:
+            if i.isalnum():
+                self.clue += '*'
+            else:
+                self.clue += i
+
+    def give_clue(self):
+        if self.answer == self.clue:
+            return self.answer
+        letter = ' '
+        while not letter.isalnum():
+            index = randint(0, len(self._answer)-1)
+            letter = self.answer[index]
+            if self.clue[index] == letter:
+                letter = ' '
+                
+        temp = list(self.clue)
+        temp[index] = letter
+        self.clue = "".join(temp)
+        return self.clue
+
+    def full_question(self):
+        return self.category + ": " + self.question
 
     def asked(self):
         query = "update or ignore questions set asked = asked + 1 where question = ? and answer = ?;"
@@ -59,7 +83,7 @@ class Questions():
         return Question(*(self._one_from_query(query) + (self,)))
 
     def good_random(self):
-        query = 'select * from questions order by answered asc, asked asc, random() asc limit 1'
+        query = 'select category, question, answer from questions order by answered asc, asked asc, random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
     def commit(self):

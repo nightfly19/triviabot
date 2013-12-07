@@ -59,6 +59,7 @@ from twisted.internet.protocol import ClientFactory
 from twisted.internet.task import LoopingCall
 
 from lib.answer import Answer
+from lib.questions import Questions
 
 import config
 
@@ -71,7 +72,6 @@ class triviabot(irc.IRCClient):
     server.
     '''
     def __init__(self):
-        self._answer = Answer()
         self._question = ''
         self._scores = {}
         self._clue_number = 0
@@ -83,6 +83,8 @@ class triviabot(irc.IRCClient):
         self._load_game()
         self._votes = 0
         self._voters = []
+        self._questions = Questions(config.SAVE_DIR + '/questions.sqlite')
+        self._questions.import_file(config.Q_DIR + './commands')
 
     def _get_nickname(self):
         return self.factory.nickname
@@ -125,13 +127,14 @@ class triviabot(irc.IRCClient):
             # Blank line.
             self._gmsg("")
             self._gmsg("Next question:")
-            self._gmsg(self._question)
-            self._gmsg("Clue: %s" % self._answer.current_clue())
+            self._gmsg(self._question.full_question())
+            self._gmsg("Clue: %s" % self._question.clue)
             self._clue_number += 1
         # no one must have gotten it.
         else:
             self._gmsg('No one got it. The answer was: %s' %
-                       self._answer.answer)
+                       self._question.answer)
+            self._question.asked()
             self._clue_number = 0
             self._get_new_question()
             self._lc.stop()
@@ -189,7 +192,7 @@ class triviabot(irc.IRCClient):
                 return
             # if not, try to match the message to the answer.
             else:
-                if msg.lower().strip() == self._answer.answer.lower():
+                if msg.lower().strip() == self._question.answer.lower():
                     self._winner(user,channel)
                     self._save_game()
         except:
@@ -215,6 +218,8 @@ class triviabot(irc.IRCClient):
         #    self._gmsg("%s points has been added to your score!" %
         #               str(self._current_points))
         self._clue_number = 0
+        self._question.asked()
+        self._question.answered()
         self._get_new_question()
         self._lc.stop()
         self._lc = LoopingCall(self._play_game)
@@ -415,7 +420,7 @@ class triviabot(irc.IRCClient):
             self._gmsg("We are not playing right now.")
             return
         self._gmsg("Question has been skipped. The answer was: %s" %
-                   self._answer.answer)
+                   self._question.answer)
         self._clue_number = 0
         self._lc.stop()
         self._lc = LoopingCall(self._play_game)
@@ -440,29 +445,14 @@ class triviabot(irc.IRCClient):
             return
         self._cmsg(channel, "Question: ")
         self._cmsg(channel, self._question)
-        self._cmsg(channel, "Clue: "+self._answer.current_clue())
+        self._cmsg(channel, "Clue: "+self._question.clue)
 
     def _get_new_question(self):
         '''
         Selects a new question from the questions directory and
         sets it.
         '''
-        damaged_question = True
-        while damaged_question:
-            #randomly select file
-            filename = choice(listdir(self._questions_dir))
-            fd = open(config.Q_DIR+filename)
-            lines = fd.read().splitlines()
-            myline = choice(lines)
-            fd.close()
-            try:
-                self._question, temp_answer = myline.split('`')
-            except ValueError:
-                print "Broken question:"
-                print myline
-                continue
-            self._answer.set_answer(temp_answer.strip())
-            damaged_question = False
+        self._question = self._questions.good_random()
 
 class ircbotFactory(ClientFactory):
     protocol = triviabot
