@@ -12,11 +12,15 @@ class Question():
 
     def asked(self):
         query = "update or ignore questions set asked = asked + 1 where question = ? and answer = ?;"
-        return self.db._one_from_query(query, (self.question, self.answer))
+        temp = self.db._one_from_query(query, (self.question, self.answer))
+        self.db.commit()
+        return temp
 
     def answered(self):
         query = "update or ignore questions set answered = answered + 1 where question = ? and answer = ?;"
-        return self.db._one_from_query(query, (self.question, self.answer))
+        temp = self.db._one_from_query(query, (self.question, self.answer))
+        self.db.commit()
+        return temp
 
 class Questions():
     def __init__(self, db_filename):
@@ -28,6 +32,7 @@ class Questions():
         cur.execute('CREATE INDEX IF NOT EXISTS questions_answer ON questions (answer);')
         cur.execute('CREATE INDEX IF NOT EXISTS questions_asked ON questions (asked);')
         cur.execute('CREATE INDEX IF NOT EXISTS questions_answered ON questions (answered);')
+        self.commit()
         
     def add(self, category, question, answer):
         query = "insert or ignore into questions (category, question, answer) values (?, ?, ?);"
@@ -40,6 +45,7 @@ class Questions():
         raw = open(question_file,'r')
         for line in raw:
             self.add(*re.match('^([^:]+):\s+([^`]+)`(\S+)',line).groups())
+        self.db.commit()
 
     def _one_from_query(self, query, args=()):
         cur = self.db.cursor()
@@ -56,5 +62,8 @@ class Questions():
         query = 'select * from questions order by answered asc, asked asc, random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
-    def close(self):
+    def commit(self):
         self.db.commit()
+
+    def close(self):
+        self.commit()
