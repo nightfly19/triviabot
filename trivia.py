@@ -1,5 +1,6 @@
 #!/usr/bin/python2
 # Copyright (C) 2013 Joe Rawson
+# Modifications by Sage Imel
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -120,19 +121,12 @@ class triviabot(irc.IRCClient):
             self._votes = 0
             self._voters = []
             self._get_new_question()
-            self._current_points = points[self._clue_number]
+            self._current_points = 1
             # Blank line.
             self._gmsg("")
             self._gmsg("Next question:")
             self._gmsg(self._question)
             self._gmsg("Clue: %s" % self._answer.current_clue())
-            self._clue_number += 1
-        # we must be somewhere in between
-        elif self._clue_number < 4:
-            self._current_points = points[self._clue_number]
-            self._gmsg("Question:")
-            self._gmsg(self._question)
-            self._gmsg('Clue: %s' % self._answer.give_clue())
             self._clue_number += 1
         # no one must have gotten it.
         else:
@@ -140,22 +134,26 @@ class triviabot(irc.IRCClient):
                        self._answer.answer)
             self._clue_number = 0
             self._get_new_question()
-            #self._lc.reset()
+            self._lc.stop()
+            self._lc = LoopingCall(self._play_game)
+            self._lc.start(config.WAIT_INTERVAL)
+
 
     def signedOn(self):
         '''
         Actions to perform on signon to the server.
         '''
-        self.join(self._game_channel)
-        self.msg('NickServ', 'identify %s' % config.IDENT_STRING)
+        self.join(self._game_channel, "catsonly")
+        # self.msg('NickServ', 'identify %s' % config.IDENT_STRING)
         print("Signed on as %s." % (self.nickname,))
         if self.factory.running:
             self._start(None,None,None)
         else:
-            self._gmsg('Welcome to %s!' % self._game_channel)
-            self._gmsg("Have an admin start the game when you are ready.")
-            self._gmsg("For how to use this bot, just say ?help or")
-            self._gmsg("%s help." % self.nickname)
+            self._start(None,None,None)
+#            self._gmsg('Welcome to %s!' % self._game_channel)
+#            self._gmsg("Have an admin start the game when you are ready.")
+#            self._gmsg("For how to use this bot, just say ?help or")
+#            self._gmsg("%s help." % self.nickname)
 
     def joined(self, channel):
         '''
@@ -210,21 +208,18 @@ class triviabot(irc.IRCClient):
             self._scores[user] += self._current_points
         except:
             self._scores[user] = self._current_points
-        if self._current_points == 1:
-            self._gmsg("%s point has been added to your score!" %
-                       str(self._current_points))
-        else:
-            self._gmsg("%s points has been added to your score!" %
-                       str(self._current_points))
+        #if self._current_points == 1:
+        #    self._gmsg("%s point has been added to your score!" %
+        #               str(self._current_points))
+        #else:
+        #    self._gmsg("%s points has been added to your score!" %
+        #               str(self._current_points))
         self._clue_number = 0
         self._get_new_question()
+        self._lc.stop()
+        self._lc = LoopingCall(self._play_game)
+        self._lc.start(config.WAIT_INTERVAL)
 
-    def ctcpQuery(self, user, channel, msg):
-        '''
-        Responds to ctcp requests.
-        Currently just reports them.
-        '''
-        print("CTCP recieved: "+user+":"+channel+": "+msg[0][0]+" "+msg[0][1])
 
     def _help(self,args,user,channel):
         '''
@@ -236,12 +231,12 @@ class triviabot(irc.IRCClient):
         try:
             self._admins.index(user)
         except:
-            self._cmsg(user, "I'm nameless's trivia bot.")
-            self._cmsg(user, "Commands: score, standings, giveclue, help, "
+            self._cmsg(user, "I'm nightfly's unix trivia bot.")
+            self._cmsg(user, "Commands: score, standings, clue, help, "
                        "next, source")
             return
-        self._cmsg(user, "I'm nameless's trivia bot.")
-        self._cmsg(user, "Commands: score, standings, giveclue, help, next, "
+        self._cmsg(user, "I'm nightfly's unix trivia bot.")
+        self._cmsg(user, "Commands: score, standings, clue, help, next, "
                    "skip, source")
         self._cmsg("Admin commands: die, set <user> <score>, start, stop, "
                    "save")
@@ -253,7 +248,7 @@ class triviabot(irc.IRCClient):
         progress.
         '''
         self._cmsg(user, 'My source can be found at: '
-                   'https://github.com/rawsonj/triviabot')
+                   'https://github.com/nightfly19/triviabot/tree/unix_trivia')
 
     def select_command(self, command, args, user, channel):
         '''
@@ -267,7 +262,7 @@ class triviabot(irc.IRCClient):
                                    'help' : self._help,
                                    'source' : self._show_source,
                                    'standings' : self._standings,
-                                   'giveclue' : self._give_clue,
+                                   'clue' : self._give_clue,
                                    'next' : self._next_vote,
                                    'skip': self._next_question
                                  }
@@ -423,6 +418,7 @@ class triviabot(irc.IRCClient):
                    self._answer.answer)
         self._clue_number = 0
         self._lc.stop()
+        self._lc = LoopingCall(self._play_game)
         self._lc.start(config.WAIT_INTERVAL)
 
     def _standings(self,args,user,channel):

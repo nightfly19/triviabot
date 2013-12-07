@@ -1,0 +1,473 @@
+n1x commands: a block-sorting file compressor, v1.0.6`bzip2
+#n1x commands: accept/reject jobs sent to a destination`cupsaccept
+n1x commands: A command line interface for SQLite version 3`sqlite3
+n1x commands: ACPI event listener`acpi_listen
+n1x commands: a cut and paste utility and mouse server for virtual consoles`gpm
+n1x commands: a database backup program`mysqldump
+n1x commands: a data import program`mysqlimport
+n1x commands: add a user or group to the system`adduser
+n1x commands: Adds a repository into the /etc/apt/sources.list or /etc/apt/sources.list.d or removes an existing one`add-apt-repository
+n1x commands: add shells to the list of valid login shells`add-shell
+n1x commands: adds private key identities to the authentication agent`ssh-add
+n1x commands: a DHCP client`dhcpcd
+n1x commands: Ubuntus default display manager`lightdm
+n1x commands: adjust backlight brightness using RandR extension`xbacklight
+n1x commands: adjust tunable filesystem parameters on ext2/ext3/ext4 filesystems`tune2fs
+n1x commands: Advanced Configuration and Power Interface event daemon`acpid
+#n1x commands: advanced controls for ALSA soundcard driver`alsactl
+n1x commands: a fast, versatile, remote (and local) file-copying tool`rsync
+n1x commands: a follow the mouse X demo`xeyes
+n1x commands: A graphical tool to analyze disk usage`baobab
+#n1x commands: A lightweight DHCP and caching DNS server.`dnsmasq
+n1x commands: allocate and free dynamic memory`free
+n1x commands: alternative Linux getty`agetty
+n1x commands: alter priority of running processes`renice
+n1x commands: Amanda index database browser`amrecover
+n1x commands: an arbitrary precision calculator`dc
+n1x commands: an interface to the on-line reference manuals`man
+n1x commands: an X viewer client for VNC`vncviewer
+n1x commands: apply a diff file to an original`patch
+n1x commands: APT Configuration Query program`apt-config
+n1x commands: APT key management utility`apt-key
+n1x commands: APT package handling utility - - command-line interface`apt-get
+n1x commands: arbitrary TCP and UDP connections and listens`netcat
+n1x commands: a ruby build program with capabilities similar to make`rake
+n1x commands: a safer way to update iptables remotely`iptables-apply
+n1x commands: A Scheme-to-C translator`chicken
+n1x commands: ASCII, decimal, hexadecimal, octal dump`hexdump
+n1x commands: ASCII image browser`cacaview
+n1x commands: a scriptable screen reader`orca
+n1x commands: a shell command interface to the syslog(3) system log module`logger
+n1x commands: a short reference for the GNU roff language`groff
+n1x commands: AT Computing's System & Process Monitor`atop
+n1x commands: A text based smb network browser`smbtree
+n1x commands: a tool to query the dpkg database`dpkg-query
+#n1x commands: a user interface for installing tasks`tasksel
+n1x commands: ssh authentication agent`ssh-agent
+n1x commands: ssh authentication key generation, management and conversion`ssh-keygen
+#n1x commands: A utility to report and change SIDs in registry files`profiles
+n1x commands: Automate Clojure projects`lein
+n1x commands: Automated conversational script with a modem`chat
+#n1x commands: automatic installation of security (and other) upgrades`unattended-upgrade
+n1x commands: awesome window manager`awesome
+n1x commands: A Windows AD and SMB/CIFS fileserver for UNIX`samba
+n1x commands: Awk to Perl translator`a2p
+n1x commands: a wrapper to launch an X server for VNC.`vncserver
+n1x commands: back up all disks in an Amanda configuration`amdump_client
+n1x commands: base64 encode/decode data and print to standard output`base64
+n1x commands: begin session on the system`login
+n1x commands: bi-directional pipe command`dpipe
+n1x commands: bind a Linux raw character device`raw
+#n1x commands: BIOS information decoder`biosdecode
+n1x commands: Bootstrap a basic Debian system`debootstrap
+n1x commands: bring a network interface up`ifup
+n1x commands: bring the system down`shutdown
+n1x commands: Browse for SSH/VNC servers on the local network`bssh
+n1x commands: build a Linux filesystem`mkfs
+n1x commands: build and execute command lines from standard input`xargs
+n1x commands: Build RPM Package(s)`rpmbuild
+n1x commands: call block device ioctls from the command line`blockdev
+n1x commands: call the link function to create a link to a file`link
+n1x commands: call the unlink function to remove the specified file`unlink
+n1x commands: call the unlink function`unlink
+#n1x commands: Catch segmentation faults in programs`catchsegv
+n1x commands: change and print terminal line settings`stty
+n1x commands: change a user's Kerberos password`kpasswd
+n1x commands: change a user's SMB password`smbpasswd
+n1x commands: change file access and modification times`touch
+n1x commands: change file attributes on a Linux file system`chattr
+n1x commands: change file mode bits`chmod
+n1x commands: change file owner and group`chown
+n1x commands: change file security context`chcon
+n1x commands: change file timestamps`touch
+n1x commands: change foreground virtual terminal`chvt
+n1x commands: change group ownership`chgrp
+n1x commands: change login shell`chsh
+n1x commands: change mode of a file`chmod
+n1x commands: change owner and group of a file`chown
+n1x commands: change ownership of a file`chown
+n1x commands: change permissions of a file`chmod
+n1x commands: change process priority`nice
+n1x commands: change reported architecture in new program environment and set personality flags`setarch
+n1x commands: change root directory`chroot
+#n1x commands: change system runlevel`telinit
+n1x commands: change the file group ownership`chgrp
+n1x commands: change the file modes`chmod
+n1x commands: change the file ownership`chown
+n1x commands: Change the label on an ext2/ext3/ext4 filesystem`e2label
+n1x commands: change the name or location of a file`rename
+n1x commands: change the nice value of a process`nice
+n1x commands: change the root filesystem`pivot_root
+n1x commands: change to a new group`newgrp
+n1x commands: change user ID or become superuser`su
+n1x commands: change user password`passwd
+n1x commands: change your finger information`chfn
+n1x commands: change your login shell`chsh
+n1x commands: check a Linux ext2/ext3/ext4 file system`e2fsck
+n1x commands: check and enforce password expiration policy`expiry
+n1x commands: check and repair a Linux filesystem`fsck
+n1x commands: check blacklist of compromised keys`ssh-vulnkey
+n1x commands: check file types and compare values`test
+#n1x commands: check grub.cfg for syntax errors`grub-script-check
+n1x commands: check in RCS revisions`ci
+n1x commands: check out RCS revisions`co
+n1x commands: Check passwords using libcrack2`cracklib-check
+#n1x commands: checksum and count the blocks in a file`sum
+#n1x commands: checksum and count the bytes in a file`cksum
+#n1x commands: check whether file names are valid or portable`pathchk
+n1x commands: clean up working files`rcsclean
+n1x commands: clear the terminal screen`clear
+n1x commands: client for administering a MySQL server`mysqladmin
+n1x commands: client for the whois directory service`whois
+#n1x commands: command-line mixer for ALSA soundcard driver`amixer
+#n1x commands: command-line sound recorder and player for ALSA soundcard driver`aplay
+n1x commands: command option parsing`getopt
+n1x commands: commit buffer cache to disk`sync
+n1x commands: communicates with a network entity using SNMP GET requests`snmpget
+n1x commands: compare compressed files`zdiff
+n1x commands: compare files line by line`diff
+#n1x commands: compare or print out terminfo descriptions`infocmp
+n1x commands: compare RCS revisions`rcsdiff
+#n1x commands: compare two files byte by byte`cmp
+#n1x commands: compare two files`cmp
+n1x commands: compare two files`diff
+n1x commands: compare two sorted files line by line`comm
+n1x commands: compile a list of locale definition files`locale-gen
+n1x commands: expand compressed files`gunzip
+n1x commands: compress files`gzip
+n1x commands: expand file to stdout`zcat
+n1x commands: compute and check MD5 message digest`md5sum
+n1x commands: compute CRC-32 checksums for the given files`crc32
+n1x commands: concatenate and print files`cat
+n1x commands: concatenate and print files in reverse`tac
+n1x commands: Concatenate and redirect sockets`ncat
+#n1x commands: concatenates the pieces of a GNU tar multi-volume archive`tarcat
+n1x commands: configurable speaking/thinking cow (and a bit more)`cowsay
+n1x commands: configure a network interface`ifconfig
+n1x commands: configure a wireless network interface`iwconfig
+#n1x commands: configure CPUs`chcpu
+#n1x commands: configure cupsd.conf options`cupsctl
+#n1x commands: configure cups printers and classes`lpadmin
+n1x commands: configure kernel parameters at runtime`sysctl
+#n1x commands: configure PCI devices`setpci
+#n1x commands: configure pppd to connect to the Internet`pppconfig
+n1x commands: configures ZFS file systems`zfs
+n1x commands: configures ZFS storage pools`zpool
+n1x commands: console pandora.com music player`pianobar
+n1x commands: construct argument lists and invoke utility`xargs
+n1x commands: controlling terminal`tty
+n1x commands: control write access to your terminal`mesg
+n1x commands: convert tabs to spaces`expand
+n1x commands: Copy Amanda dumps from one volume to another`amvault
+n1x commands: copy files and directories`cp
+n1x commands: copy files`cp
+n1x commands: copy the first part of files`head
+n1x commands: copy the last part of a file`tail
+n1x commands: create a new group`groupadd
+n1x commands: create a new user or update default new user information`useradd
+n1x commands: create a new UUID value`uuidgen
+n1x commands: create an MS-DOS file system under Linux`mkdosfs
+n1x commands: create an NTFS file system`mkntfs
+#n1x commands: Create a NTP host key`ntp-keygen
+n1x commands: create a special or ordinary file`mknod
+n1x commands: create a temporary file or directory`mktemp
+#n1x commands: create lvm2 information dumps for diagnostic purposes`lvmdump
+n1x commands: create mp3 audio files`lame
+#n1x commands: creates a container`lxc-create
+n1x commands: create symbolic links`sln
+n1x commands: C shell with file name completion and command line editing`tcsh
+n1x commands: cut out selected fields of each line of a file`cut
+n1x commands: daemon that remembers fake ownership/permissions of files manipulated by fakeroot processes.`faked-tcp
+n1x commands: daemon to execute scheduled commands (Vixie Cron)`cron
+n1x commands: daemon to respond to SNMP request packets.`snmpd
+n1x commands: decimal and binary prefixes`units
+n1x commands: delay for a specified amount of time`sleep
+n1x commands: delete a directory`rmdir
+n1x commands: delete a group`groupdel
+n1x commands: delete a name and possibly the file it refers to`unlink
+n1x commands: delete a user account and related files`userdel
+#n1x commands: demangle word-wrapped patches`unwrapdiff
+n1x commands: description of multilanguage support`locale
+#n1x commands: destroy a container.`lxc-destroy
+#n1x commands: destroy Kerberos tickets`kdestroy
+#n1x commands: detect if running in a chroot`ischroot
+n1x commands: determine file type`file
+#n1x commands: Determine file type`mimetype
+#n1x commands: determine search path for manual pages`manpath
+#n1x commands: discard unused blocks on a mounted filesystem`fstrim
+n1x commands: display a calendar`cal
+n1x commands: display a line of text`echo
+n1x commands: Display amount of free and used memory in the system`free
+n1x commands: display a tree of processes`pstree
+#n1x commands: display/change the label on an ntfs file system`ntfslabel
+n1x commands: display current group names`groups
+n1x commands: display dialog boxes from shell scripts`dialog
+#n1x commands: display disk space usage on a network entity via SNMP`snmpdf
+n1x commands: display file or file system status`stat
+n1x commands: display files on a page-by-page basis`more
+#n1x commands: display GTK+ dialogs`zenity
+#n1x commands: display information about the CPU architecture`lscpu
+n1x commands: display lines beginning with a given string`look
+n1x commands: display Linux processes`top
+n1x commands: display manual page descriptions`whatis
+n1x commands: display who is on the system`who
+n1x commands: DNS lookup utility`dig
+n1x commands: DNS lookup utility`host
+n1x commands: do nothing, successfully`true
+n1x commands: do nothing, unsuccessfully`false
+n1x commands: dump traffic on a network`tcpdump
+n1x commands: duplicate standard input`tee
+n1x commands: Dynamic Host Configuration Protocol Client`dhclient
+n1x commands: Dynamic Kernel Module Support`dkms
+n1x commands: edit the sudoers file`visudo
+n1x commands: enable/disable devices and files for paging and swapping`swapoff
+n1x commands: enable/disable devices and files for paging and swapping`swapon
+n1x commands: estimate file space usage`du
+#n1x commands: ethernet bridge administration`brctl
+n1x commands: evaluate arguments as an expression`expr
+n1x commands: execute a command as another user`sudo
+n1x commands: execute a program periodically, showing output fullscreen`watch
+n1x commands: expand and concatenate data`zcat
+#n1x commands: ext2/ext3/ext4 file system resizer`resize2fs
+n1x commands: Extended attributes`attr
+n1x commands: factor numbers`factor
+n1x commands: files used to schedule the execution of programs`crontab
+n1x commands: filesystem client based on ssh`sshfs
+n1x commands: File Transfer Protocol client.`ftp
+n1x commands: File Transfer Protocol server.`ftpd
+n1x commands: filter for extracting from a ZIP archive in a pipe`funzip
+n1x commands: find files`find
+n1x commands: find printable strings in files`strings
+n1x commands: flush file system buffers`sync
+n1x commands: format and print data`printf
+n1x commands: format of tape archive files`tar
+#n1x commands: Free Lossless Audio Codec`flac
+#n1x commands: freeze all the container's processes`lxc-freeze
+n1x commands: ftp-like client to access SMB/CIFS resources on servers`smbclient
+#n1x commands: gather ssh public keys`ssh-keyscan
+n1x commands: generate a GRUB configuration file`grub-mkconfig
+n1x commands: Generate configuration scripts`autoconf
+n1x commands: get entries from Name Service Switch libraries`getent
+n1x commands: get file status`stat
+n1x commands: get locale-specific information`locale
+n1x commands: Get more detailed wireless information from a wireless interface`iwlist
+n1x commands: get name and information about current kernel`uname
+n1x commands: get NFSv4 file/directory access control lists`nfs4_getfacl
+n1x commands: get the name of the current system`uname
+n1x commands: get time in seconds`time
+n1x commands: Ghostscript (PostScript and PDF language interpreter and previewer)`gs
+n1x commands: Gnome partition editor for manipulating disk partitions.`gparted
+n1x commands: GNU Bourne-Again SHell`bash
+n1x commands: GNU project C++ compiler`g++
+n1x commands: GNU project C compiler`gcc
+n1x commands: GNU project Emacs`emac
+#n1x commands: GNU Project parser generator`yacc
+#n1x commands: GNU Project parser generator (yacc replacement)`bison
+n1x commands: GSettings configuration tool`gsettings
+#n1x commands: hostname resolution description`hostname
+#n1x commands: init daemon control tool`initctl
+n1x commands: initialize an X session`startx
+n1x commands: install GRUB to a device`grub-install
+n1x commands: Interactively dump and analyze network traffic`wireshark
+n1x commands: interactive process viewer`htop
+n1x commands: Interactive Ruby Shell`irb
+n1x commands: interchange between cut buffer and selection`xcutsel
+n1x commands: join lines of two files on a common field`join
+n1x commands: kill a client by its X resource`xkill
+n1x commands: kill processes by name`killall
+n1x commands: LDAP search tool`ldapsearch
+n1x commands: LDAP who am i? tool`ldapwhoami
+n1x commands: libvirtd management daemon`libvirtd
+#n1x commands: lightweight finger`pinky
+n1x commands: line-oriented text editor`ed
+n1x commands: link files`ln
+n1x commands: list directory contents`dir
+n1x commands: list directory contents`ls
+n1x commands: list info about machines that respond to SMB name queries on a subnet`findsmb
+n1x commands: list local system locks`lslocks
+n1x commands: list NFS statistics`nfsstat
+n1x commands: list open files`lsof
+n1x commands: list process IDs of all processes that have one or more files open`fuser
+n1x commands: list, test and extract compressed files in a ZIP archive`unzip
+#n1x commands: list the containers existing on the system`lxc-ls
+#n1x commands: list the most popular Debian packages`popularity-contest
+n1x commands: locate the binary, source, and manual page files for a command`whereis
+n1x commands: log in to a new group`newgrp
+n1x commands: log messages`logger
+n1x commands: low-level data-extraction from Amanda volumes`amrestore
+n1x commands: low-level format a floppy disk`fdformat
+n1x commands: LVM2 tools`lvm
+n1x commands: lynx-like alternative character mode WWW browser`links
+n1x commands: make a directory, a special file, or a regular file`mknod
+n1x commands: make a directory`mkdir
+n1x commands: make a FIFO special file (a named pipe)`mkfifo
+n1x commands: make a unique temporary filename`mktemp
+n1x commands: make block or character special files`mknod
+n1x commands: make directories`mkdir
+n1x commands: make links between files`ln
+n1x commands: manage locks from shell scripts`flock
+n1x commands: manage MD devices aka Linux Software RAID`mdadm
+n1x commands: manipulate disk partition table`fdisk
+n1x commands: Mercurial source code management system`hg
+n1x commands: mobile shell with roaming and intelligent local echo`mosh
+n1x commands: modify a group definition on the system`groupmod
+n1x commands: modify a user account`usermod
+n1x commands: Monitor delta differences in SNMP Counter values`snmpdelta
+n1x commands: mount a filesystem`mount
+n1x commands: mount and unmount FUSE filesystems`fusermount
+n1x commands: move files`mv
+n1x commands: name service cache daemon`nscd
+n1x commands: Nano's ANOther editor, an enhanced free Pico clone`nano
+n1x commands: Network exploration tool and security / port scanner`nmap
+n1x commands: Network Time Protocol (NTP) daemon`ntpd
+n1x commands: OpenSSH SSH client (remote login program)`ssh
+n1x commands: OpenSSH SSH daemon`sshd
+n1x commands: OpenSSL command line tool`openssl
+n1x commands: opposite of more`less
+n1x commands: output the first part of files`head
+n1x commands: output the last part of files`tail
+n1x commands: overview of time and timers`time
+n1x commands: overwrite a file to hide its contents, and optionally delete it`shred
+n1x commands: package and compress (archive) files`zip
+n1x commands: package manager for Debian`dpkg
+n1x commands: parse pathname components`basename
+n1x commands: parse pathname components`dirname
+n1x commands: peer-to-peer network based digital currency`bitcoind
+n1x commands: permit or deny messages`mesg
+n1x commands: PostgreSQL interactive terminal`psql
+n1x commands: primitive command line interface to RandR extension`xrandr
+n1x commands: print a calendar`cal
+n1x commands: print a sequence of numbers`seq
+n1x commands: print contents of X events`xev
+n1x commands: print cups status information`lpstat
+n1x commands: print effective userid`whoami
+n1x commands: print files`lpr
+n1x commands: print formatted output`printf
+n1x commands: print lines matching a pattern`grep
+n1x commands: print newline, word, and byte counts for each file`wc
+n1x commands: print or set the system date and time`date
+n1x commands: print system information`uname
+n1x commands: print the groups a user is in`groups
+n1x commands: print the resolved path`realpath
+n1x commands: print the route packets trace to network host`traceroute
+n1x commands: print the strings of printable characters in files.`strings
+n1x commands: print the user names of users currently logged in to the current host`users
+n1x commands: query Internet name servers interactively`nslookup
+n1x commands: query or set the hardware clock (RTC)`hwclock
+n1x commands: Query system configuration variables`getconf
+n1x commands: query the APT cache`apt-cache
+n1x commands: query the Apt Xapian Index`axi-cache
+n1x commands: queue, examine or delete jobs for later execution`batch
+n1x commands: readable online documentation`info
+n1x commands: read from standard input and write to standard output and files`tee
+n1x commands: read kernel time variables`ntptime
+n1x commands: readline wrapper`rlwrap
+n1x commands: read one line`line
+n1x commands: reboot or enable/disable Ctrl-Alt-Del`reboot
+n1x commands: reference crypt program for Amanda symmetric data encryption`amcrypt
+n1x commands: reliable and extended syslogd`rsyslogd
+n1x commands: remove a directory`rmdir
+n1x commands: remove a user or group from the system`deluser
+n1x commands: remove directory entries`rm
+n1x commands: remove empty directories`rmdir
+n1x commands: remove unnecessary information from executable files (DEVELOPMENT)`strip
+n1x commands: report a snapshot of the current processes.`ps
+n1x commands: Report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions.`iostat
+n1x commands: report file system disk space usage`df
+n1x commands: Report input/output statistics for network filesystems (NFS).`nfsiostat
+n1x commands: report memory map of a process`pmap
+n1x commands: report on current Samba connections`smbstatus
+n1x commands: report or filter out repeated lines in a file`uniq
+n1x commands: report process status`ps
+n1x commands: resolve a pathname`realpath
+#n1x commands: restore a PostgreSQL database from an archive file created by pg_dump`pg_restore
+n1x commands: retrieve a subtree of management values using SNMP GETNEXT requests`snmpwalk
+#n1x commands: retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)`ssh-import-id
+n1x commands: return false value`false
+n1x commands: return non-directory portion of a pathname`basename
+n1x commands: return the canonicalized absolute pathname`realpath
+n1x commands: return the directory portion of a pathname`dirname
+n1x commands: return the last component of a pathname`basename
+n1x commands: return user's terminal name`tty
+n1x commands: return working directory name`pwd
+n1x commands: reverse lines of a file or files`rev
+n1x commands: rotates, compresses, and mails system logs`logrotate
+n1x commands: RPM Package Manager`rpm
+n1x commands: Ruby Make`rake
+n1x commands: Ruby Templating`erb
+n1x commands: run a command immune to hangups, with output to a non-tty`nohup
+n1x commands: run a command in an environment faking root privileges for file manipulation`fakeroot
+n1x commands: run a command with a time limit`timeout
+n1x commands: run a command with substitute user and group ID`su
+n1x commands: run a program in a modified environment`env
+n1x commands: run a System V init script`service
+n1x commands: run command or interactive shell with special root directory`chroot
+n1x commands: run programs and summarize system resource usage`time
+n1x commands: run Windows programs on Unix`wine
+n1x commands: schedule file system updates`sync
+n1x commands: screen manager with VT100/ANSI terminal emulation`screen
+n1x commands: secure copy (remote file copy program)`scp
+n1x commands: secure IP tunnel daemon.`openvpn
+n1x commands: see if a directory is a mountpoint`mountpoint
+n1x commands: select or reject lines common to two files`comm
+n1x commands: send a message to another user`write
+n1x commands: send a signal to a process`kill
+n1x commands: send ICMP ECHO_REQUEST to network hosts`ping
+n1x commands: Server to provide AD and SMB/CIFS services to clients`samba
+n1x commands: set nice values of running processes`renice
+#n1x commands: set or get MS-DOS filesystem label`dosfslabel
+n1x commands: set or get process I/O scheduling class and priority`ionice
+n1x commands: set passwords for VNC server`vncpasswd
+n1x commands: sets or lists extended attributes on a file or directory`xattr
+n1x commands: set tabs on a terminal`tabs
+n1x commands: set the options for a terminal`stty
+n1x commands: set up a Linux swap area`mkswap
+n1x commands: show listing of last logged in users`last
+n1x commands: show / manipulate bridge addresses and devices`bridge
+n1x commands: show / manipulate routing, devices, policy routing and tunnels`ip
+n1x commands: show / manipulate the IP routing table`route
+n1x commands: show / manipulate traffic control settings`tc
+n1x commands: show mount information for an NFS server`showmount
+n1x commands: show or set system host name`hostname
+n1x commands: shows the full path of (shell) commands.`which
+n1x commands: show who is logged on`who
+n1x commands: shut down part of a full-duplex connection`shutdown
+n1x commands: sleep for the specified number of seconds`sleep
+n1x commands: sort lines of text files`sort
+n1x commands: sort, merge, or sequence check text files`sort
+n1x commands: soundcard mixer for ALSA soundcard driver, with ncurses interface`alsamixer
+n1x commands: split a file into pieces`split
+#n1x commands: splits directory into multiple with equal size`dirsplit
+n1x commands: stop swapping to file/device`swapoff
+n1x commands: start swapping to file/device`swapon
+n1x commands: Steel Bank Common Lisp`sbcl
+n1x commands: stream editor for filtering and transforming text`sed
+n1x commands: switch to another filesystem as the root of the mount tree`switch_root
+n1x commands: take a network interface down`ifdown
+n1x commands: Tell how long the system has been running.`uptime
+n1x commands: text formatting and typesetting`tex
+n1x commands: The C Preprocessor`cpp
+n1x commands: the extended Internet services daemon`xinetd
+n1x commands: The GNU linker`ld
+n1x commands: The GNU Project Extension Language`guile
+n1x commands: The non-interactive network downloader.`wget
+n1x commands: The Perl 5 language interpreter`perl
+n1x commands: the reference Wayland server`weston
+n1x commands: The Samba encrypted password file`smbpasswd
+n1x commands: the stupid content tracker`git
+n1x commands: The Swiss Army Knife of Embedded Linux`busybox
+n1x commands: tool for enabling and disabling wireless devices`rfkill
+n1x commands: trace system calls and signals`strace
+n1x commands: transfer a URL`curl
+n1x commands: translate characters`tr
+n1x commands: translate find command lines to Perl code`find2perl
+n1x commands: trivial file transfer program`tftp
+n1x commands: truncate a file to a specified length`truncate
+n1x commands: unimplemented system calls`stty
+n1x commands: unit conversion and calculation program`units
+n1x commands: unmount file systems`umount
+n1x commands: utility for modifying keymaps and pointer button mappings in X`xmodmap
+n1x commands: word, line, and byte or character count`wc
+n1x commands: write a message to users`wall
+n1x commands: write arguments to standard output`echo
+n1x commands: X Window System initializer`xinit

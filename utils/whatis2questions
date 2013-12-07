@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+File.open('./derps').readlines.each do |line|
+  if line =~ /^([a-z]\S+) +\(\d[a-x]*\)\s+-\s+(.*)$/
+    puts "n1x commands: #{$2}`#{$1}"
+  end
+end
