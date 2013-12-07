@@ -29,9 +29,17 @@ class Questions():
         cur.execute('CREATE INDEX IF NOT EXISTS questions_asked ON questions (asked);')
         cur.execute('CREATE INDEX IF NOT EXISTS questions_answered ON questions (answered);')
         
-    def add_question(category, question, answer):
+    def add(self, category, question, answer):
         query = "insert or ignore into questions (category, question, answer) values (?, ?, ?);"
-        self.cur.execute(query, (category, question, answer))
+        cur = self.db.cursor()
+        temp = cur.execute(query, (category, question, answer))
+        cur.close()
+        return temp
+
+    def import_file(self, question_file):
+        raw = open(question_file,'r')
+        for line in raw:
+            self.add(*re.match('^([^:]+):\s+([^`]+)`(\S+)',line).groups())
 
     def _one_from_query(self, query, args=()):
         cur = self.db.cursor()
@@ -40,11 +48,11 @@ class Questions():
         cur.close()
         return temp
         
-    def random_question(self):
+    def random(self):
         query = 'select category, question, answer from questions order by random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
-    def good_random_question(self):
+    def good_random(self):
         query = 'select * from questions order by answered asc, asked asc, random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
