@@ -37,13 +37,13 @@ class Question():
 
     def asked(self):
         query = "update or ignore questions set asked = asked + 1 where prikey = ?;"
-        temp = self.db._one_from_query(query, (self.prikey))
+        temp = self.db._one_from_query(query, (str(self.prikey),))
         self.db.commit()
         return temp
 
     def answered(self):
         query = "update or ignore questions set answered = answered + 1 where prikey = ?;"
-        temp = self.db._one_from_query(query, (self.prikey))
+        temp = self.db._one_from_query(query, (str(self.prikey),))
         self.db.commit()
         return temp
 
