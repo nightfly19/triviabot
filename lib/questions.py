@@ -3,7 +3,8 @@ import sys
 import re
 
 class Question():
-    def __init__(self, category, question, answer, db):
+    def __init__(self, prikey, category, question, answer, db):
+        self.prikey = prikey
         self.category = category.encode('ascii')
         self.question = question.encode('ascii')
         self.answer = answer.encode('ascii')
@@ -35,14 +36,14 @@ class Question():
         return self.category + ": " + self.question
 
     def asked(self):
-        query = "update or ignore questions set asked = asked + 1 where question = ? and answer = ?;"
-        temp = self.db._one_from_query(query, (self.question, self.answer))
+        query = "update or ignore questions set asked = asked + 1 where prikey = ?;"
+        temp = self.db._one_from_query(query, (self.prikey))
         self.db.commit()
         return temp
 
     def answered(self):
-        query = "update or ignore questions set answered = answered + 1 where question = ? and answer = ?;"
-        temp = self.db._one_from_query(query, (self.question, self.answer))
+        query = "update or ignore questions set answered = answered + 1 where prikey = ?;"
+        temp = self.db._one_from_query(query, (self.prikey))
         self.db.commit()
         return temp
 
@@ -79,11 +80,11 @@ class Questions():
         return temp
         
     def random(self):
-        query = 'select category, question, answer from questions order by random() asc limit 1'
+        query = 'select prikey, category, question, answer from questions order by random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
     def good_random(self):
-        query = 'select category, question, answer from questions order by answered asc, asked asc, random() asc limit 1'
+        query = 'select prikey, category, question, answer from questions order by answered asc, asked asc, random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
     def commit(self):

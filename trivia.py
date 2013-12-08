@@ -421,6 +421,7 @@ class triviabot(irc.IRCClient):
             return
         self._gmsg("Question has been skipped. The answer was: %s" %
                    self._question.answer)
+        self._question.asked()
         self._clue_number = 0
         self._lc.stop()
         self._lc = LoopingCall(self._play_game)
