@@ -241,7 +241,7 @@ class triviabot(irc.IRCClient):
                        "next, source")
             return
         self._cmsg(user, "I'm nightfly's unix trivia bot.")
-        self._cmsg(user, "Commands: score, standings, clue, help, next, "
+        self._cmsg(user, "Commands: score, standings, clue, help, next, unasked, unanswered"
                    "skip, source")
         self._cmsg("Admin commands: die, set <user> <score>, start, stop, "
                    "save")
@@ -268,6 +268,8 @@ class triviabot(irc.IRCClient):
                                    'source' : self._show_source,
                                    'standings' : self._standings,
                                    'clue' : self._give_clue,
+                                   'unasked' : self._unasked,
+                                   'unanswered' : self._unanswered,
                                    'next' : self._next_vote,
                                    'skip': self._next_question
                                  }
@@ -445,8 +447,20 @@ class triviabot(irc.IRCClient):
             self._gmsg("we are not playing right now.")
             return
         self._cmsg(channel, "Question: ")
-        self._cmsg(channel, self._question)
+        self._cmsg(channel, self._question.question)
         self._cmsg(channel, "Clue: "+self._question.clue)
+
+    def _unanswered(self,args,user,channel):
+        if not self._lc.running:
+            self._gmsg("we are not playing right now.")
+            return
+        self._cmsg(channel, "Unanswered questions: " + str(self._questions.unanswered()))
+
+    def _unasked(self,args,user,channel):
+        if not self._lc.running:
+            self._gmsg("we are not playing right now.")
+            return
+        self._cmsg(channel, "Unasked questions: " + str(self._questions.unasked()))
 
     def _get_new_question(self):
         '''

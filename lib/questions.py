@@ -87,6 +87,22 @@ class Questions():
         query = 'select prikey, category, question, answer from questions order by answered asc, asked asc, random() asc limit 1'
         return Question(*(self._one_from_query(query) + (self,)))
 
+    def answered(self):
+        query = 'select count(*) from questions where answered > 0;'
+        return self._one_from_query(query)[0]
+
+    def unanswered(self):
+        query = 'select count(*) from questions where answered = 0;'
+        return self._one_from_query(query)[0]
+
+    def asked(self):
+        query = 'select count(*) from questions where asked > 0;'
+        return self._one_from_query(query)[0]
+
+    def unasked(self):
+        query = 'select count(*) from questions where asked = 0;'
+        return self._one_from_query(query)[0]
+
     def commit(self):
         self.db.commit()
 
